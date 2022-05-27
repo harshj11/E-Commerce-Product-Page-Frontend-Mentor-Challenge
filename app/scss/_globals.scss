@@ -26,3 +26,39 @@ a {
     cursor: pointer;
     text-decoration: none;
 }
+
+.flex {
+    display: flex;
+
+    &-jc-sa {
+        justify-content: space-around;
+    }
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-jc-se {
+        justify-content: space-evenly;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 100ms ease-in-out;
+}
+
+.active {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 100ms ease-in-out;
+}
