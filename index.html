@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="./app/scss/style.css">
 
-  <script src="./app/scripts/script.js"></script>
+  <script src="./app/scripts/script.js" defer></script>
 
   <title>Frontend Mentor | E-commerce product page</title>
 
@@ -23,11 +23,67 @@
 </head>
 <body>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+  <section class="header">
+    <nav class="nav flex flex-ai-c flex-jc-sb">
+      
+      <div class="nav__left flex flex-ai-c">
+        
+        <div class="nav__left__burger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+  
+        <div class="nav__left__logo">
+          <img src="./images/logo.svg">
+        </div>
+
+        <div class="hide" id="nav__sidemenu">
+
+          <div class="nav__sidemenu__close" id="close__button">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <div class="nav__links">
+            <ul class="nav__links__list flex">
+      
+              <li class="nav__item">
+                <a href="#" class="nav__link">Collections</a>
+              </li>
+      
+              <li class="nav__item">
+                <a href="#" class="nav__link">Men</a>
+              </li>
+      
+              <li class="nav__item">
+                <a href="#" class="nav__link">Women</a>
+              </li>
+      
+              <li class="nav__item">
+                <a href="#" class="nav__link">About</a>
+              </li>
+      
+              <li class="nav__item">
+                <a href="#" class="nav__link">Contact</a>
+              </li>
+      
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nav__right flex flex-ai-c">
+        <img src="./images/icon-cart.svg" class="nav__right__cart">
+        <img src="./images/image-avatar.png" class="nav__right__avatar">
+      </div>
+    </nav>
+
+    <div class="hide" id="overlay"></div>
+  </section>
 
   Sneaker Company
 

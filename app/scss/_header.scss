@@ -1,0 +1,190 @@
+.header {
+
+    @include breakpoint-up(medium) {
+        margin: 0 2rem;
+    }
+
+    @include breakpoint-up(large) {
+        margin: 0 5rem;
+    }
+
+    .nav {
+        padding: 1.25rem 1.5rem;
+    
+        @include breakpoint-up(medium) {
+            border-bottom: solid 1px $grayishBlue;
+            padding: 2rem 0;
+        }
+    
+        &__left {
+    
+            &__logo {
+                @include breakpoint-up(medium) {
+                    margin-right: 1.5rem;
+                }
+    
+                @include breakpoint-up(large) {
+                    margin-right: 3rem;
+                }
+            }
+    
+            &__burger, .nav__sidemenu__close {
+
+                cursor: pointer;
+                margin-right: 1rem;
+
+                & > div {
+                    background-color: $dkGrayishBlue;
+                    height: 0.25rem;
+                    width: 1.2rem;
+    
+                    &:not(:last-child) {
+                        margin-bottom: 0.1rem;
+                    }
+                }
+    
+                @include breakpoint-up(medium) {
+                    display: none;
+                }
+            }
+    
+            #nav__sidemenu {
+                background-color: $white;
+                
+                height: 100%;
+                width: 70%;
+                
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                z-index: 2;
+    
+                @include breakpoint-up(medium) {
+                    opacity: 1;
+                    pointer-events: all;
+                    position: relative;
+                }
+    
+                .nav__sidemenu__close {
+                    padding: 1.5rem;
+
+                    & > div {
+                        &:not(:last-child) {
+                            margin-bottom: 0.2rem;
+                        }
+    
+                        &:nth-child(1) {
+                            transform: rotate(45deg);
+                            transform-origin: 2px 4px;
+                        }
+    
+                        &:nth-child(2) {
+                            visibility: hidden;
+                        }
+    
+                        &:nth-child(3) {
+                            transform: rotate(-45deg);
+                            transform-origin: -1px -1px;
+                        }
+                    }               
+    
+                    @include breakpoint-up(medium) {
+                        display: none;
+                    }
+                }
+            }
+    
+            .nav__links {
+                @include breakpoint-down(small) {
+                    font-weight: bold;
+                    padding: 0 1.5rem;
+                }
+    
+                .nav__links__list {
+                    flex-direction: column;
+                    list-style-type: none;
+                    
+                    @include breakpoint-up(medium) {
+                        flex-direction: row;
+                    }
+    
+                    .nav__item {
+                        padding: 0.5rem 0;
+    
+                        @include breakpoint-up(medium) {
+                            padding: 0;
+                        }
+    
+                        &:not(:last-child) {
+                            @include breakpoint-up(medium) {
+                                margin-right: 0.8rem;
+                            }
+                            
+                            @include breakpoint-up(large) {
+                                margin-right: 2rem;
+                            }
+                        }
+
+                        .nav__link {
+                            font-size: 0.9rem;
+                            position: relative;
+                            
+                            @include breakpoint-up(medium) {
+                                color: $dkGrayishBlue;
+
+                                &::after {
+                                    background-color: $orange;
+                                    content: "";
+
+                                    height: 0.25rem;
+                                    width: 100%;
+
+                                    opacity: 0;
+
+                                    position: absolute;
+                                    top: 3rem;
+                                    left: 0;
+
+                                    transition: all 100ms ease-in-out;
+                                }
+
+                                &:hover {
+                                    color: $black;
+                                    cursor: pointer;
+                                    transition: all 100ms ease-in-out;
+                 
+                                    &::after {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        &__right {
+    
+            &__cart {
+                margin-right: 1.25rem;
+            }
+    
+            &__avatar {
+                height: 1.5rem;
+            }
+        }
+    }
+
+    #overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 100%;
+    }
+}
