@@ -29,6 +29,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -67,15 +71,25 @@ a {
 .hide {
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.hide__btn {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  .hide__for__desktop {
+    display: none;
+  }
 }
 
 .active {
   opacity: 1;
   pointer-events: all;
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 @media (min-width: 40em) {
@@ -141,7 +155,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
 }
 
 @media (min-width: 40em) {
@@ -246,7 +260,7 @@ a {
     width: 100%;
     opacity: 0;
     position: absolute;
-    top: 3rem;
+    top: 3.25rem;
     left: 0;
     -webkit-transition: all 100ms ease-in-out;
     transition: all 100ms ease-in-out;
@@ -270,6 +284,18 @@ a {
   height: 1.5rem;
 }
 
+@media (min-width: 40em) {
+  .header .nav__right__avatar {
+    height: 2rem;
+  }
+}
+
+.header .nav__right__avatar:hover {
+  cursor: pointer;
+  border: solid 2px #ff7d1a;
+  border-radius: 50%;
+}
+
 .header #overlay {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
@@ -277,5 +303,52 @@ a {
   left: 0;
   height: 100%;
   width: 100%;
+  z-index: 2;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel__track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+.carousel__slide {
+  width: 100%;
+}
+
+.carousel__image {
+  height: 100vw;
+}
+
+.carousel__button {
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  margin: 0 0.5rem;
+  padding: 0.4rem 0.5rem;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.carousel__button--prev {
+  z-index: 1;
+}
+
+.carousel__button--next {
+  right: 0;
 }
 /*# sourceMappingURL=style.css.map */
