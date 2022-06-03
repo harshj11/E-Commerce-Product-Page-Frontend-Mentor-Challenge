@@ -16,6 +16,7 @@
 
             &__selected img {
                 border-radius: 0.8rem;
+                cursor: pointer;
                 width: 18rem;
 
                 @include breakpoint-up(large) {
@@ -28,6 +29,8 @@
 
                 & > img {
                     
+                    transition: all 50ms ease-in-out;
+
                     @include breakpoint-up(medium) {
                         border-radius: 0.8rem;
                         height: 4rem;
@@ -38,6 +41,17 @@
                         height: 4.75rem;
                         width: 4.75rem;
                     }
+
+                    &:hover {
+                        border: solid 0.1875rem $orange;
+                        cursor: pointer;    
+                        opacity: 70%;
+                    }
+                }
+
+                .active__image {
+                    border: solid 0.1875rem $orange;
+                    opacity: 70%;
                 }
             }
         }

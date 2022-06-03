@@ -1,0 +1,30 @@
+
+const carousel = document.querySelector(".carousel");
+
+selectedImage.addEventListener('click', (event) => {
+    overlay.classList.toggle("active");
+    overlay.classList.toggle("hide");
+});
+
+if(window.innerWidth <= 639) {
+        sidemenu.classList.toggle('active');
+        sidemenu.classList.toggle('hide');
+    }
+
+    #overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 100%;
+
+        z-index: 2;
+    }
+
+    
+    
+    
+    z-index: 1;

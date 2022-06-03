@@ -382,6 +382,7 @@ ul {
   }
   .hero__images__selected img {
     border-radius: 0.8rem;
+    cursor: pointer;
     width: 18rem;
   }
 }
@@ -395,6 +396,10 @@ ul {
 @media (min-width: 40em) {
   .hero__images__thumbnails {
     margin-top: 1rem;
+  }
+  .hero__images__thumbnails > img {
+    -webkit-transition: all 50ms ease-in-out;
+    transition: all 50ms ease-in-out;
   }
 }
 
@@ -410,6 +415,18 @@ ul {
   .hero__images__thumbnails > img {
     height: 4.75rem;
     width: 4.75rem;
+  }
+}
+
+@media (min-width: 40em) {
+  .hero__images__thumbnails > img:hover {
+    border: solid 0.1875rem #ff7d1a;
+    cursor: pointer;
+    opacity: 70%;
+  }
+  .hero__images__thumbnails .active__image {
+    border: solid 0.1875rem #ff7d1a;
+    opacity: 70%;
   }
 }
 
