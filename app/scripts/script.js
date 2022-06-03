@@ -50,3 +50,18 @@ prevButton.addEventListener('click', (e) => {
 
     moveToSlide(currentSlide, prevSlide);    
 });
+
+const selectedImage = document.querySelector(".hero__images__selected").firstElementChild;
+const thumnailContainer = document.querySelector(".hero__images__thumbnails");
+const thumbnailImages = Array.from(thumnailContainer.children);
+let activeThumbnail = thumbnailImages[0];
+
+thumbnailImages.forEach(img => {
+    img.addEventListener('click', (event) => {
+        const newlySelectedImageSource = event.target.getAttribute('src').substring(0, 24) + ".jpg";
+        selectedImage.setAttribute('src', newlySelectedImageSource);
+        activeThumbnail.classList.remove("active__image");
+        activeThumbnail = event.target;
+        activeThumbnail.classList.add("active__image");
+    });
+}); 
