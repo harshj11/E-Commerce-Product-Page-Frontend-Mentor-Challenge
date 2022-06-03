@@ -15,6 +15,19 @@ body {
   padding: 0;
 }
 
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Kumbh Sans', sans-serif;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+button:hover {
+  opacity: 70%;
+}
+
 h1, h2, h3, h4, h5, h6,
 p,
 a,
@@ -27,6 +40,10 @@ a {
   color: black;
   cursor: pointer;
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 .flex {
@@ -67,15 +84,21 @@ a {
 .hide {
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+@media (min-width: 40em) {
+  .hide__for__desktop {
+    display: none;
+  }
 }
 
 .active {
   opacity: 1;
   pointer-events: all;
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 @media (min-width: 40em) {
@@ -86,7 +109,7 @@ a {
 
 @media (min-width: 64em) {
   .header {
-    margin: 0 5rem;
+    margin: 0 10rem;
   }
 }
 
@@ -141,7 +164,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
 }
 
 @media (min-width: 40em) {
@@ -246,7 +269,7 @@ a {
     width: 100%;
     opacity: 0;
     position: absolute;
-    top: 3rem;
+    top: 3.25rem;
     left: 0;
     -webkit-transition: all 100ms ease-in-out;
     transition: all 100ms ease-in-out;
@@ -270,6 +293,18 @@ a {
   height: 1.5rem;
 }
 
+@media (min-width: 40em) {
+  .header .nav__right__avatar {
+    height: 2rem;
+  }
+}
+
+.header .nav__right__avatar:hover {
+  cursor: pointer;
+  border: solid 2px #ff7d1a;
+  border-radius: 50%;
+}
+
 .header #overlay {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
@@ -277,5 +312,213 @@ a {
   left: 0;
   height: 100%;
   width: 100%;
+  z-index: 2;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel__track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+.carousel__slide {
+  width: 100%;
+}
+
+.carousel__image {
+  height: 100vw;
+}
+
+.carousel__button {
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  margin: 0 0.5rem;
+  padding: 0.4rem 0.5rem;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.carousel__button--prev {
+  z-index: 1;
+}
+
+.carousel__button--next {
+  right: 0;
+}
+
+@media (min-width: 40em) {
+  .hero {
+    margin: 5rem 2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .hero {
+    margin: 5rem 10rem;
+  }
+}
+
+.hero__images {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  .hero__images {
+    display: block;
+  }
+  .hero__images__selected img {
+    border-radius: 0.8rem;
+    width: 18rem;
+  }
+}
+
+@media (min-width: 40em) and (min-width: 64em) {
+  .hero__images__selected img {
+    width: 23rem;
+  }
+}
+
+@media (min-width: 40em) {
+  .hero__images__thumbnails {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 40em) and (min-width: 40em) {
+  .hero__images__thumbnails > img {
+    border-radius: 0.8rem;
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+@media (min-width: 40em) and (min-width: 64em) {
+  .hero__images__thumbnails > img {
+    height: 4.75rem;
+    width: 4.75rem;
+  }
+}
+
+.hero__content {
+  padding: 1.5rem;
+}
+
+@media (min-width: 40em) {
+  .hero__content {
+    max-width: 25rem;
+  }
+}
+
+.hero__content__brand {
+  margin-bottom: 0.5rem;
+}
+
+.hero__content__brand span {
+  color: #ff7d1a;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero__content__sneaker-type, .hero__content__sneaker-desc {
+  margin: 0.5rem 0;
+}
+
+@media (min-width: 64em) {
+  .hero__content__sneaker-type {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.hero__content__sneaker-desc {
+  color: #68707d;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.hero__content__sneaker-price {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 1.25rem 0;
+}
+
+.hero__content__sneaker-price .discount {
+  background-color: #ffede0;
+  border: none;
+  border-radius: 0.2rem;
+  color: #ff7d1a;
+  font-size: 0.85rem;
+  margin: 0 0.5rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.hero__content__sneaker-price .original-price {
+  color: #b6bcc8;
+  text-decoration: line-through;
+}
+
+@media (min-width: 40em) {
+  .hero__content__cart-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.hero__content__cart-container .quantity, .hero__content__cart-container .add-to-cart-button {
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 22rem;
+}
+
+.hero__content__cart-container .quantity {
+  background-color: #f7f8fd;
+}
+
+@media (min-width: 40em) {
+  .hero__content__cart-container .quantity {
+    margin-right: 1rem;
+    width: 70%;
+  }
+}
+
+.hero__content__cart-container .add-to-cart-button {
+  background-color: #ff7d1a;
+  border: none;
+  -webkit-box-shadow: 0 1rem 1rem 0px #ffd2b3;
+          box-shadow: 0 1rem 1rem 0px #ffd2b3;
+  color: white;
+  padding: 1rem 0.8rem;
+  width: 100%;
+}
+
+.hero__content__cart-container .add-to-cart-button img {
+  color: white;
+  height: 0.8rem;
+  margin-right: 0.5rem;
 }
 /*# sourceMappingURL=style.css.map */

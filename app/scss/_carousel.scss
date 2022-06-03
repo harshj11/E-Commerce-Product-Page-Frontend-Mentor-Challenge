@@ -1,0 +1,42 @@
+.carousel {
+    position: relative;
+    overflow: hidden;
+
+    &__track {
+        display: flex;
+        transition: transform 250ms ease-in-out;
+    }
+
+    &__slide {
+        width: 100%;
+    }
+
+    &__image {
+        height: 100vw;
+    }
+
+    &__button {
+        background-color: $white;
+        border: none;
+        border-radius: 50%;
+
+        height: 2rem;
+        width: 2rem;
+
+        margin: 0 0.5rem;
+        padding: 0.4rem 0.5rem;
+
+        position: absolute;
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        &--prev {
+            z-index: 1;
+        }
+
+        &--next {
+            right: 0;
+        }
+    }
+}
