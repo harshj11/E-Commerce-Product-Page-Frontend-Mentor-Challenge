@@ -13,6 +13,18 @@ body {
     padding: 0;
 }
 
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Kumbh Sans', sans-serif;
+    transition: all 150ms ease-in-out;
+}
+
+button:hover {
+    opacity: 70%;
+}
+
 h1, h2, h3, h4, h5, h6,
 p,
 a,

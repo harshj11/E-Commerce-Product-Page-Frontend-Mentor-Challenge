@@ -1,43 +1,148 @@
-.carousel {
-    position: relative;
-    overflow: hidden;
+.hero {
 
-    &__track {
-        display: flex;
-        transition: transform 250ms ease-in-out;
+    @include breakpoint-up(medium) {
+        margin: 5rem 2rem;
     }
 
-    &__slide {
-        width: 100%;
+    @include breakpoint-up(large) {
+        margin: 5rem 10rem;
     }
 
-    &__image {
-        height: 100vw;
+    &__images {
+        display: none;
+
+        @include breakpoint-up(medium) {
+            display: block;
+
+            &__selected img {
+                border-radius: 0.8rem;
+                width: 18rem;
+
+                @include breakpoint-up(large) {
+                    width: 23rem;
+                }
+            }
+            
+            &__thumbnails {
+                margin-top: 1rem;
+
+                & > img {
+                    
+                    @include breakpoint-up(medium) {
+                        border-radius: 0.8rem;
+                        height: 4rem;
+                        width: 4rem;
+                    }
+
+                    @include breakpoint-up(large) {
+                        height: 4.75rem;
+                        width: 4.75rem;
+                    }
+                }
+            }
+        }
     }
 
-    &__button {
-        background-color: $white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
+    &__content {
+        padding: 1.5rem;
 
-        height: 2rem;
-        width: 2rem;
-
-        margin: 0 0.5rem;
-        padding: 0.4rem 0.5rem;
-
-        position: absolute;
-        top: 50%;
-
-        transform: translateY(-50%);
-
-        &--prev {
-            z-index: 1;
+        @include breakpoint-up(medium) {
+            max-width: 25rem;
         }
 
-        &--next {
-            right: 0;
+        &__brand {
+            margin-bottom: 0.5rem;
+            span {
+                color: $orange;
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+        }
+
+        &__sneaker {
+            &-type, &-desc {
+                margin: 0.5rem 0;
+            }
+    
+            &-type {
+                @include breakpoint-up(large) {
+                    font-size: 2.25rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+    
+            &-desc {
+                color: $dkGrayishBlue;
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+    
+            &-price {
+                flex-direction: column;
+                align-items: flex-start;
+    
+                margin: 1.25rem 0;
+    
+                .discount {
+                    background-color: $paleOrange;
+    
+                    border: none;
+                    border-radius: 0.2rem;
+                    
+                    color: $orange;
+                    
+                    font-size: 0.85rem;
+                    
+                    margin: 0 0.5rem;
+                    padding: 0.2rem 0.4rem;
+                }
+    
+                .original-price {
+                    color: $grayishBlue;
+                    text-decoration: line-through;
+                }
+            }
+        }
+
+        &__cart-container {
+            @include breakpoint-up(medium) {
+                display: flex;
+                align-items: center;
+            }
+    
+            .quantity, .add-to-cart-button {
+                border-radius: 0.5rem;
+    
+                margin: 1rem auto;
+                padding: 1rem;
+    
+                max-width: 22rem;
+            }
+    
+            .quantity {
+                background-color: $ltGrayishBlue;
+    
+                @include breakpoint-up(medium) {
+                    margin-right: 1rem;
+                    width: 70%;
+                }
+            }
+    
+            .add-to-cart-button {
+                background-color: $orange;
+                border: none;
+                box-shadow: 0 1rem 1rem 0px $ltOrange;
+                color: $white;
+                padding: 1rem 0.8rem;
+                width: 100%;
+    
+                img {
+                    color: $white;
+                    height: 0.8rem;
+                    margin-right: 0.5rem;
+                }
+            }
         }
     }
 }

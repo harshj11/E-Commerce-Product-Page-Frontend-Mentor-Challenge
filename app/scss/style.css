@@ -15,6 +15,19 @@ body {
   padding: 0;
 }
 
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Kumbh Sans', sans-serif;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+button:hover {
+  opacity: 70%;
+}
+
 h1, h2, h3, h4, h5, h6,
 p,
 a,
@@ -75,10 +88,6 @@ ul {
   transition: all 200ms ease-in-out;
 }
 
-.hide__btn {
-  display: none;
-}
-
 @media (min-width: 40em) {
   .hide__for__desktop {
     display: none;
@@ -100,7 +109,7 @@ ul {
 
 @media (min-width: 64em) {
   .header {
-    margin: 0 5rem;
+    margin: 0 10rem;
   }
 }
 
@@ -333,7 +342,6 @@ ul {
   background-color: white;
   border: none;
   border-radius: 50%;
-  cursor: pointer;
   height: 2rem;
   width: 2rem;
   margin: 0 0.5rem;
@@ -350,5 +358,167 @@ ul {
 
 .carousel__button--next {
   right: 0;
+}
+
+@media (min-width: 40em) {
+  .hero {
+    margin: 5rem 2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .hero {
+    margin: 5rem 10rem;
+  }
+}
+
+.hero__images {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  .hero__images {
+    display: block;
+  }
+  .hero__images__selected img {
+    border-radius: 0.8rem;
+    width: 18rem;
+  }
+}
+
+@media (min-width: 40em) and (min-width: 64em) {
+  .hero__images__selected img {
+    width: 23rem;
+  }
+}
+
+@media (min-width: 40em) {
+  .hero__images__thumbnails {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 40em) and (min-width: 40em) {
+  .hero__images__thumbnails > img {
+    border-radius: 0.8rem;
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+@media (min-width: 40em) and (min-width: 64em) {
+  .hero__images__thumbnails > img {
+    height: 4.75rem;
+    width: 4.75rem;
+  }
+}
+
+.hero__content {
+  padding: 1.5rem;
+}
+
+@media (min-width: 40em) {
+  .hero__content {
+    max-width: 25rem;
+  }
+}
+
+.hero__content__brand {
+  margin-bottom: 0.5rem;
+}
+
+.hero__content__brand span {
+  color: #ff7d1a;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero__content__sneaker-type, .hero__content__sneaker-desc {
+  margin: 0.5rem 0;
+}
+
+@media (min-width: 64em) {
+  .hero__content__sneaker-type {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.hero__content__sneaker-desc {
+  color: #68707d;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.hero__content__sneaker-price {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 1.25rem 0;
+}
+
+.hero__content__sneaker-price .discount {
+  background-color: #ffede0;
+  border: none;
+  border-radius: 0.2rem;
+  color: #ff7d1a;
+  font-size: 0.85rem;
+  margin: 0 0.5rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.hero__content__sneaker-price .original-price {
+  color: #b6bcc8;
+  text-decoration: line-through;
+}
+
+@media (min-width: 40em) {
+  .hero__content__cart-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.hero__content__cart-container .quantity, .hero__content__cart-container .add-to-cart-button {
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 22rem;
+}
+
+.hero__content__cart-container .quantity {
+  background-color: #f7f8fd;
+}
+
+@media (min-width: 40em) {
+  .hero__content__cart-container .quantity {
+    margin-right: 1rem;
+    width: 70%;
+  }
+}
+
+.hero__content__cart-container .add-to-cart-button {
+  background-color: #ff7d1a;
+  border: none;
+  -webkit-box-shadow: 0 1rem 1rem 0px #ffd2b3;
+          box-shadow: 0 1rem 1rem 0px #ffd2b3;
+  color: white;
+  padding: 1rem 0.8rem;
+  width: 100%;
+}
+
+.hero__content__cart-container .add-to-cart-button img {
+  color: white;
+  height: 0.8rem;
+  margin-right: 0.5rem;
 }
 /*# sourceMappingURL=style.css.map */
