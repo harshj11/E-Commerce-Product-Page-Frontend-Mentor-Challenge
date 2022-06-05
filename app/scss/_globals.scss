@@ -67,6 +67,57 @@ ul {
     }
 }
 
+#overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: calc(100% + 70vw);
+    width: 100%;
+
+    z-index: 2;
+
+    @include breakpoint-up(medium) {
+        height: 115%;
+    }
+}
+
+#overlay-thumbnails, .thumbnails {
+    display: none;
+
+    @include breakpoint-up(medium) {
+        display: flex;
+        margin-top: 1rem;
+    }
+
+    &>img {
+        @include breakpoint-up(medium) {
+            border-radius: 0.8rem;
+            height: 4rem;
+            transition: all 50ms ease-in-out;
+            width: 4rem;
+        }
+
+        @include breakpoint-up(large) {
+            height: 4.75rem;
+            width: 4.75rem;
+        }
+
+        &:hover {
+            border: solid 0.1875rem $orange;
+            cursor: pointer;
+            opacity: 70%;
+        }
+    }
+
+    .active__thumbnail {
+        border: solid 0.1875rem $orange;
+        opacity: 70%;
+    }
+}
+
 .hide {
     opacity: 0;
     pointer-events: none;

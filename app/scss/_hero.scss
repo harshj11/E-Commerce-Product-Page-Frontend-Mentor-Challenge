@@ -23,37 +23,6 @@
                     width: 23rem;
                 }
             }
-            
-            &__thumbnails {
-                margin-top: 1rem;
-
-                & > img {
-                    
-                    transition: all 50ms ease-in-out;
-
-                    @include breakpoint-up(medium) {
-                        border-radius: 0.8rem;
-                        height: 4rem;
-                        width: 4rem;
-                    }
-
-                    @include breakpoint-up(large) {
-                        height: 4.75rem;
-                        width: 4.75rem;
-                    }
-
-                    &:hover {
-                        border: solid 0.1875rem $orange;
-                        cursor: pointer;    
-                        opacity: 70%;
-                    }
-                }
-
-                .active__image {
-                    border: solid 0.1875rem $orange;
-                    opacity: 70%;
-                }
-            }
         }
     }
 
