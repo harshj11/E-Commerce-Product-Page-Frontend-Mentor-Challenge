@@ -81,6 +81,63 @@ ul {
           align-items: center;
 }
 
+#overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% + 70vw);
+  width: 100%;
+  z-index: 2;
+}
+
+@media (min-width: 40em) {
+  #overlay {
+    height: 115%;
+  }
+}
+
+#overlay-thumbnails, .thumbnails {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  #overlay-thumbnails, .thumbnails {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 40em) {
+  #overlay-thumbnails > img, .thumbnails > img {
+    border-radius: 0.8rem;
+    height: 4rem;
+    -webkit-transition: all 50ms ease-in-out;
+    transition: all 50ms ease-in-out;
+    width: 4rem;
+  }
+}
+
+@media (min-width: 64em) {
+  #overlay-thumbnails > img, .thumbnails > img {
+    height: 4.75rem;
+    width: 4.75rem;
+  }
+}
+
+#overlay-thumbnails > img:hover, .thumbnails > img:hover {
+  border: solid 0.1875rem #ff7d1a;
+  cursor: pointer;
+  opacity: 70%;
+}
+
+#overlay-thumbnails .active__thumbnail, .thumbnails .active__thumbnail {
+  border: solid 0.1875rem #ff7d1a;
+  opacity: 70%;
+}
+
 .hide {
   opacity: 0;
   pointer-events: none;
@@ -159,7 +216,7 @@ ul {
 
 .header .nav__left #nav__sidemenu {
   background-color: white;
-  height: 100%;
+  height: calc(100% + 70vw);
   width: 70%;
   position: absolute;
   top: 0;
@@ -172,6 +229,7 @@ ul {
     opacity: 1;
     pointer-events: all;
     position: relative;
+    z-index: 1;
   }
 }
 
@@ -305,19 +363,52 @@ ul {
   border-radius: 50%;
 }
 
-.header #overlay {
-  background-color: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 2;
+.carousel {
+  overflow: hidden;
+  position: relative;
 }
 
-.carousel {
-  position: relative;
-  overflow: hidden;
+@media (min-width: 40em) {
+  .carousel {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 18rem;
+    z-index: 2;
+  }
+}
+
+@media (min-width: 64em) {
+  .carousel {
+    width: 23rem;
+  }
+}
+
+.carousel__close-button {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  .carousel__close-button {
+    display: block;
+    margin-bottom: 0.8rem;
+    position: relative;
+    left: 93%;
+  }
+  .carousel__close-button svg path {
+    fill: white;
+  }
+}
+
+.carousel__close-button:hover {
+  opacity: 100%;
+}
+
+.carousel__close-button:hover svg path {
+  fill: #ff7d1a;
 }
 
 .carousel__track {
@@ -338,6 +429,20 @@ ul {
   height: 100vw;
 }
 
+@media (min-width: 40em) {
+  .carousel__image {
+    border-radius: 0.8rem;
+    height: auto;
+    width: 18rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .carousel__image {
+    width: 23rem;
+  }
+}
+
 .carousel__button {
   background-color: white;
   border: none;
@@ -350,6 +455,12 @@ ul {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+@media (min-width: 40em) {
+  .carousel__button {
+    top: 40%;
+  }
 }
 
 .carousel__button--prev {
@@ -382,6 +493,7 @@ ul {
   }
   .hero__images__selected img {
     border-radius: 0.8rem;
+    cursor: pointer;
     width: 18rem;
   }
 }
@@ -389,27 +501,6 @@ ul {
 @media (min-width: 40em) and (min-width: 64em) {
   .hero__images__selected img {
     width: 23rem;
-  }
-}
-
-@media (min-width: 40em) {
-  .hero__images__thumbnails {
-    margin-top: 1rem;
-  }
-}
-
-@media (min-width: 40em) and (min-width: 40em) {
-  .hero__images__thumbnails > img {
-    border-radius: 0.8rem;
-    height: 4rem;
-    width: 4rem;
-  }
-}
-
-@media (min-width: 40em) and (min-width: 64em) {
-  .hero__images__thumbnails > img {
-    height: 4.75rem;
-    width: 4.75rem;
   }
 }
 

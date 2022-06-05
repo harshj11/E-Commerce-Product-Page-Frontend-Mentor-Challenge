@@ -16,28 +16,11 @@
 
             &__selected img {
                 border-radius: 0.8rem;
+                cursor: pointer;
                 width: 18rem;
 
                 @include breakpoint-up(large) {
                     width: 23rem;
-                }
-            }
-            
-            &__thumbnails {
-                margin-top: 1rem;
-
-                & > img {
-                    
-                    @include breakpoint-up(medium) {
-                        border-radius: 0.8rem;
-                        height: 4rem;
-                        width: 4rem;
-                    }
-
-                    @include breakpoint-up(large) {
-                        height: 4.75rem;
-                        width: 4.75rem;
-                    }
                 }
             }
         }
