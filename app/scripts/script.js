@@ -159,3 +159,27 @@ prevButton.addEventListener('click', (e) => {
         }
     }
 });
+
+//----------------------CART-----------------------//
+let quantityElement = document.querySelector(".quantity span strong");
+
+const increaseQtyButton = document.querySelector(".quantity__increase");
+const decreaseQtyButton = document.querySelector(".quantity__decrease");
+
+const modiftyQuantity = (sign) => {
+    if(sign === 'i')
+        quantityElement.innerText = Number(quantityElement.innerText) + 1;       
+    else if(sign === 'd') {
+        if(quantityElement.innerText === '0')
+            return;
+        quantityElement.innerText = Number(quantityElement.innerText) - 1;       
+    }
+}
+
+increaseQtyButton.addEventListener('click', () => {
+    modiftyQuantity('i');
+});
+
+decreaseQtyButton.addEventListener('click', () => {
+    modiftyQuantity('d');
+});
