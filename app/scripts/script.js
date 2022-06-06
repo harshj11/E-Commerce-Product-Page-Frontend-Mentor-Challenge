@@ -160,11 +160,18 @@ prevButton.addEventListener('click', (e) => {
     }
 });
 
-//----------------------CART-----------------------//
+//----------------------INCREASE OR DECREASE QUANTITY-----------------------//
+
 let quantityElement = document.querySelector(".quantity span strong");
 
 const increaseQtyButton = document.querySelector(".quantity__increase");
 const decreaseQtyButton = document.querySelector(".quantity__decrease");
+
+const modifyCart = () => {
+    let cartQty = quantityElement.innerText;
+    const cartLabel = document.querySelector(".nav__right__cart__label");
+    cartLabel.innerText = cartQty;
+}
 
 const modiftyQuantity = (sign) => {
     if(sign === 'i')
@@ -182,4 +189,11 @@ increaseQtyButton.addEventListener('click', () => {
 
 decreaseQtyButton.addEventListener('click', () => {
     modiftyQuantity('d');
+});
+
+//----------------------CART-----------------------//
+const addToCartButton = document.querySelector(".add-to-cart-button");
+
+addToCartButton.addEventListener('click', (event) => {
+   modifyCart(); 
 });

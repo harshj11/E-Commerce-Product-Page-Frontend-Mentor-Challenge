@@ -170,6 +170,23 @@
     
             &__cart {
                 margin-right: 1.25rem;
+                position: relative;
+
+                &__label {
+                    background-color: $orange;
+                    border-radius: 6px;
+                    color: $white;
+
+                    font-size: 0.6rem;
+                    font-weight: bold;
+                    
+                    padding: 0 0.4rem;
+
+                    position: absolute;
+                    top: -0.25rem;
+                    left: 50%;
+
+                }
             }
     
             &__avatar {
