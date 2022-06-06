@@ -77,7 +77,10 @@
       </div>
 
       <div class="nav__right flex flex-ai-c">
-        <img src="./images/icon-cart.svg" class="nav__right__cart">
+        <div class="nav__right__cart">
+          <img src="./images/icon-cart.svg">
+          <div class="nav__right__cart__label flex flex-jc-c">0</div>
+        </div>
         <img src="./images/image-avatar.png" class="nav__right__avatar">
       </div>
     </nav>
@@ -173,13 +176,13 @@
         <div class="hero__content__cart-container">
 
           <div class="quantity flex flex-jc-sb">
-            <button>
+            <button class="quantity__decrease">
               <img src="./images/icon-minus.svg">
             </button>
             <span>
               <strong>0</strong>
             </span>
-            <button>
+            <button class="quantity__increase">
               <img src="./images/icon-plus.svg">
             </button>
           </div>

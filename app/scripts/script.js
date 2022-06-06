@@ -159,3 +159,41 @@ prevButton.addEventListener('click', (e) => {
         }
     }
 });
+
+//----------------------INCREASE OR DECREASE QUANTITY-----------------------//
+
+let quantityElement = document.querySelector(".quantity span strong");
+
+const increaseQtyButton = document.querySelector(".quantity__increase");
+const decreaseQtyButton = document.querySelector(".quantity__decrease");
+
+const modifyCart = () => {
+    let cartQty = quantityElement.innerText;
+    const cartLabel = document.querySelector(".nav__right__cart__label");
+    cartLabel.innerText = cartQty;
+}
+
+const modiftyQuantity = (sign) => {
+    if(sign === 'i')
+        quantityElement.innerText = Number(quantityElement.innerText) + 1;       
+    else if(sign === 'd') {
+        if(quantityElement.innerText === '0')
+            return;
+        quantityElement.innerText = Number(quantityElement.innerText) - 1;       
+    }
+}
+
+increaseQtyButton.addEventListener('click', () => {
+    modiftyQuantity('i');
+});
+
+decreaseQtyButton.addEventListener('click', () => {
+    modiftyQuantity('d');
+});
+
+//----------------------CART-----------------------//
+const addToCartButton = document.querySelector(".add-to-cart-button");
+
+addToCartButton.addEventListener('click', (event) => {
+   modifyCart(); 
+});
