@@ -24,7 +24,6 @@ const toggleSidemenuOrCarousel = () => {
 
 hamburger.addEventListener('click', toggleSidemenuOrCarousel);
 closeHamburger.addEventListener('click', toggleSidemenuOrCarousel);
-overlay.addEventListener('click', toggleSidemenuOrCarousel);
 
 //----------------------DISPLAY THE SELECTED IMAGE-----------------------//
 
@@ -163,23 +162,27 @@ prevButton.addEventListener('click', (e) => {
 //----------------------INCREASE OR DECREASE QUANTITY-----------------------//
 
 let quantityElement = document.querySelector(".quantity span strong");
+let noOfItems = Number(quantityElement.innerText);
 
 const increaseQtyButton = document.querySelector(".quantity__increase");
 const decreaseQtyButton = document.querySelector(".quantity__decrease");
 
+const cartLabel = document.querySelector(".nav__right__cart__label");
+
 const modifyCart = () => {
     let cartQty = quantityElement.innerText;
-    const cartLabel = document.querySelector(".nav__right__cart__label");
     cartLabel.innerText = cartQty;
 }
 
 const modiftyQuantity = (sign) => {
-    if(sign === 'i')
-        quantityElement.innerText = Number(quantityElement.innerText) + 1;       
-    else if(sign === 'd') {
+    if(sign === 'i') {
+        quantityElement.innerText = noOfItems + 1;       
+        noOfItems++;
+    } else if(sign === 'd') {
         if(quantityElement.innerText === '0')
             return;
-        quantityElement.innerText = Number(quantityElement.innerText) - 1;       
+        quantityElement.innerText = noOfItems - 1;       
+        noOfItems--;
     }
 }
 
@@ -191,9 +194,62 @@ decreaseQtyButton.addEventListener('click', () => {
     modiftyQuantity('d');
 });
 
-//----------------------CART-----------------------//
+//----------------------CART-DETAILS-HEADER-CARD-----------------------//
+
+const cartDetailsCard = document.querySelector(".nav__right__cart__cart-details");
+const emptyCart = document.querySelector(".cart-details-empty");
+const cartQuantity = cartDetailsCard.querySelector(".cart__quantity");
+const totalPrice = cartDetailsCard.querySelector(".total-price");
+
+const cartCardElements = Array.from(cartDetailsCard.children);
+
+const cartIcon = document.querySelector(".nav__right__cart");
+
+const removeIcon = document.querySelector(".remove-icon");
+
+const displayCartContent = (isVisible) => {
+    if(noOfItems == 0) {
+        for(let i = 1; i < cartCardElements.length - 1; i++) {
+            cartCardElements[i].classList.remove("flex");
+            cartCardElements[i].classList.add("d-none");
+        }    
+        cartCardElements[cartCardElements.length - 1].classList.remove("d-none");
+        isVisible = false;
+    } else if(!isVisible) {
+        for(let i = 1; i < cartCardElements.length - 1; i++) {
+            cartCardElements[i].classList.add("flex");
+            cartCardElements[i].classList.remove("d-none");
+        }
+        cartCardElements[cartCardElements.length - 1].classList.add("d-none");
+        isVisible = true;
+    }
+
+    return isVisible;
+}
+
+displayCartContent(false);
+
+cartIcon.addEventListener('click', (event) => {
+    cartDetailsCard.classList.toggle("hide");
+    cartDetailsCard.classList.toggle("active");
+});
+
+removeIcon.addEventListener('click', (event) => {
+    noOfItems = 0;
+    displayCartContent(false);
+    quantityElement.innerText = 0;
+    cartLabel.innerText = quantityElement.innerText;
+})
+
+//----------------------ADD TO CART BUTTON-----------------------//
+
 const addToCartButton = document.querySelector(".add-to-cart-button");
 
 addToCartButton.addEventListener('click', (event) => {
-   modifyCart(); 
+    modifyCart(); 
+    cartQuantity.innerText = noOfItems;
+    totalPrice.innerText = "$" + (noOfItems * 125);
+
+    let isVisible = false;
+    isVisible = displayCartContent(isVisible);
 });
