@@ -43,6 +43,16 @@ ul {
     list-style: none;
 }
 
+.d {
+    &-block {
+        display: block;
+    }
+
+    &-none {
+        display: none;
+    }
+}
+
 .flex {
     display: flex;
 
@@ -64,6 +74,10 @@ ul {
 
     &-ai-c {
         align-items: center;
+    }
+
+    &-dir-c {
+        flex-direction: column;
     }
 }
 

@@ -1,6 +1,7 @@
 .carousel {
     overflow: hidden;
     position: relative;
+    z-index: 1;
 
     @include breakpoint-up(medium) {
         margin: auto;
@@ -82,7 +83,7 @@
         transform: translateY(-50%);
 
         @include breakpoint-up(medium) {
-            top: 40%;
+            top: 45%;
         }
 
         &--prev {
